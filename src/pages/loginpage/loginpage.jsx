@@ -17,10 +17,11 @@ export default function LoginPage() {
         <div className="wrapper">
           <div className="logo">
             <div>ChatGPT
-            <span>●</span>
+            {/* <span>●</span> */}
+            <div className="circle"></div>
             </div>
           </div>
-          <RunningMessage messages={loginPageMessages} messagesIntervalMs={2000} textRenderSpeedMs={100}/>
+          <RunningMessage messages={loginPageMessages} messagesIntervalMs={2000} textRenderSpeedMs={10}/>
         </div>
       </div>
 

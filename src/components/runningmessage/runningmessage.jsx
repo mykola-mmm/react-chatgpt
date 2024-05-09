@@ -4,51 +4,60 @@ import { useState, useEffect, useRef } from 'react'
 export default function RunningMessage({ messages, messagesIntervalMs, textRenderSpeedMs }) {
   const [isMessageText, setMessageText] = useState("")
   const [isMessageIndex, setMessageIndex] = useState(0)
-  // const [isMessageRendered, setMessageRendered] = useState(null)
+  const [isRenderFinished, setRenderFinished] = useState(false)
+  const [isAnimation, setAnimation] = useState(false)
   const index = useRef(0)
 
   function addLetter() {
     setMessageText(isMessageText + messages[isMessageIndex].msgbody[index.current])
-    // setMessageText(prev => prev + messages[isMessageIndex].msgbody[index.current]) // not working
-
     console.log('index current - ', index.current, ' letter - ', messages[isMessageIndex].msgbody[index.current])
     console.log('isMessageText - ', isMessageText)
     index.current++
   }
 
   useEffect(() => {
+    setRenderFinished(false)
+    setAnimation(false)
     if (index.current < messages[isMessageIndex].msgbody.length) {
-      let addChar = setInterval(addLetter, 10);
+      let addChar = setInterval(addLetter, textRenderSpeedMs);
       return () => clearInterval(addChar);
     }
+    // setTimeout(() => {
+    //   setRenderFinished(true)
+    //   console.log('render finished')
+    // }, messagesIntervalMs / 2);
 
-    // clearTimeout(timeout);
+    setTimeout(() => {
+      setRenderFinished(true)
+      console.log('render finished')
+    }, messagesIntervalMs / 2);
+
+    setTimeout(() => {
+      setAnimation(true)
+      console.log('set animation true')
+    }, messagesIntervalMs * 0.75);
+
     setTimeout(() => {
       setMessageIndex(prev => (prev + 1) % messages.length)
       setMessageText('')
       index.current = 0
-    }, 1000);
+      console.log('timeout')
+    }, messagesIntervalMs);
 
-    return (
-    console.log('cleanup')
-    // setTimeout(()=>{console.log('delay')}, 1000)
-    // setMessageIndex(prev => (prev + 1) % messages.length)
-    // setMessageText('')
-    // index.current = 0
-  )
-
-    
-
-  }, [isMessageText])
+    return () => {
+      console.log('cleanup')
+    }
+  }, [isMessageText, isMessageIndex])
   
   return (
     <div className="running-message">
-      <div className="message">
+      <div className={"message " + (isAnimation ? "transition" : "")}>
         <div className="title">
           {messages[isMessageIndex].title}
         </div>
         <div className="text">
           {isMessageText}
+          <div className={"circle " + (isRenderFinished ? "inactive" : "")}></div>
         </div>
       </div>
     </div>

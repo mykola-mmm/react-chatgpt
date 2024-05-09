@@ -20,19 +20,30 @@
                 position: absolute;
                 display: flex;
                 div{
+                    position: relative;
+                    display: flex;
                     // line-height: 0.5;
                     font-size: 22px;
+                    align-items: center;
+                    // .circle{
+                    //     margin-left: 5px;
+                    //     width: 20px;
+                    //     aspect-ratio: 1;
+                    //     background-color: #fe7600;
+                    //     border-radius: 50%;
+                    // }
                 }
 
-                span{
-                    box-sizing: border-box;
-                    font-family: Söhne Circle;
-                    font-weight: 700;
-                    font-size: 50px;
-                    // line-height: ;
-                    font-variation-settings: normal;
-                    font-feature-settings: normal;
-                }
+                // span{
+                //     box-sizing: border-box;
+                //     font-family: Söhne Circle;
+                //     font-weight: 700;
+                //     font-size: 50px;
+                //     // line-height: ;
+                //     font-variation-settings: normal;
+                //     font-feature-settings: normal;
+                // }
+
             }
 
             .running-message{
@@ -43,13 +54,22 @@
                 flex-grow: 1;
                 // padding-right: 10px;
                 .message{
+                    // transition: all 1s ease-out;
+                    &.transition{ 
+                        // display: none;
+                        transition: all 0.2s ease-out;
+                        opacity: 0;
+                    }
                     .title{
                         font-size: 100px;
                         padding-top: 50px;
                     }
                     .text{
-
+                        display: flex;
+                        width: 100%;
                     }
+
+
                 }
             }
         }
@@ -147,5 +167,20 @@
                 }
             }
         }
+    }
+}
+
+.circle{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #fe7600;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    &.inactive{
+        
+
+        // display: none;
+        background-color: #ffffdb;
     }
 }
