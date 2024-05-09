@@ -18,14 +18,13 @@ export default function RunningMessage({ messages, messagesIntervalMs, textRende
   useEffect(() => {
     setRenderFinished(false)
     setAnimation(false)
+    
     if (index.current < messages[isMessageIndex].msgbody.length) {
-      let addChar = setInterval(addLetter, textRenderSpeedMs);
+      // let addChar = setInterval(addLetter, textRenderSpeedMs);
+      let addChar = setTimeout(addLetter, textRenderSpeedMs);
+
       return () => clearInterval(addChar);
     }
-    // setTimeout(() => {
-    //   setRenderFinished(true)
-    //   console.log('render finished')
-    // }, messagesIntervalMs / 2);
 
     setTimeout(() => {
       setRenderFinished(true)
@@ -55,10 +54,13 @@ export default function RunningMessage({ messages, messagesIntervalMs, textRende
         <div className="title">
           {messages[isMessageIndex].title}
         </div>
-        <div className="text">
+        <span className="text">
           {isMessageText}
-          <div className={"circle " + (isRenderFinished ? "inactive" : "")}></div>
-        </div>
+          {/* <div className={"circle " + (isRenderFinished ? "inactive" : "")}></div> */}
+
+        </span>
+        <div className={"circle " + (isRenderFinished ? "inactive" : "")}></div>
+
       </div>
     </div>
   )

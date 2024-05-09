@@ -1,3 +1,5 @@
+@import "./animation.scss";
+
 .loginpage-wrapper {
     height: 100vh;
     display: flex;
@@ -54,19 +56,22 @@
                 flex-grow: 1;
                 // padding-right: 10px;
                 .message{
-                    // transition: all 1s ease-out;
+                    // position: relative;
+                    // animation-fill-mode: forwards;
+                    animation:  my-animation-appear 0.1s ease-out forwards;
+                    
+
                     &.transition{ 
-                        // display: none;
-                        transition: all 0.2s ease-out;
-                        opacity: 0;
+                        animation:  my-animation-dissapear 0.1s ease-in;
                     }
                     .title{
-                        font-size: 100px;
-                        padding-top: 50px;
+                        font-size: 50px;
+                        // padding-top: 50px;
                     }
                     .text{
-                        display: flex;
-                        width: 100%;
+                        // display: flex;
+                        font-size: 20px;
+                        // width: 100%;
                     }
 
 

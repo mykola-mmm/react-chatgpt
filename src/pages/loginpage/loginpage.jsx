@@ -6,9 +6,9 @@ export default function LoginPage() {
 
   const loginPageMessages = [
     // { title: "Welcome", msgbody: "Ta!" },
-    { title: "Welcome", msgbody: "Thank you for visiting our website!" },
-    { title: "New Feature", msgbody: "Check out our latest feature!" },
-    { title: "Important Notice", msgbody: "Please read the following notice." }
+    { title: "Welcome", msgbody: "Thank you for visiting our website! Thank you for visiting our website! Thank you for visiting our website!" },
+    { title: "New Feature", msgbody: "Check out our latest feature! Check out our latest feature! Check out our latest feature!" },
+    { title: "Important Notice", msgbody: "Please read the following notice. Please read the following notice. Please read the following notice." }
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function LoginPage() {
             <div className="circle"></div>
             </div>
           </div>
-          <RunningMessage messages={loginPageMessages} messagesIntervalMs={2000} textRenderSpeedMs={10}/>
+          <RunningMessage messages={loginPageMessages} messagesIntervalMs={4500} textRenderSpeedMs={33}/>
         </div>
       </div>
 
