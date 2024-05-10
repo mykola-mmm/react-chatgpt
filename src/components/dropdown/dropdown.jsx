@@ -1,15 +1,16 @@
 import React from "react";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import { useState, useRef, useEffect, useCallback } from "react";
-
+import detectClickOutside from "../../utils/detectClickOutside";
 
 
 export default function DropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 
+const tst_ref = useRef("button_tst");
   return (
     <>
-      <button  onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
+      <button  ref={tst_ref} onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
         <span className="model-name">ChatGpt</span>
         <span className="version">3.5</span>
         <ArrowDropDownRoundedIcon />
@@ -25,31 +26,11 @@ export default function DropDown() {
 
 function DropDownMenu({ onClickOutsideHandler }) {
 
-    
-
-    function useClickOutside(ref, onClickOutside) {
-        useEffect(() => {
-          /**
-           * Invoke Function onClick outside of element
-           */
-          function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-              onClickOutside();
-            }
-          }
-          // Bind
-          document.addEventListener("mousedown", handleClickOutside);
-          return () => {
-            // dispose
-            document.removeEventListener("mousedown", handleClickOutside);
-          };
-        }, [ref, onClickOutside]);
-      }
-
+    const tst_ref = useRef("button_tst");
       const wrapperRef = useRef("menu");
-      useClickOutside(wrapperRef, () => {
+      detectClickOutside(wrapperRef, () => {
         onClickOutsideHandler(false);
-      });
+      }, [tst_ref]);
 
   return (
     <>
