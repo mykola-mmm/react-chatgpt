@@ -1,13 +1,42 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import {useState} from "react";
 import LoginPage from "./pages/loginpage/loginpage";
+import PolicyPage from "./pages/policypage/policypage";
+import TermsOfUse from "./components/termsofuse/termsofuse";
+import PrivacyPolicy from "./components/privacypolicy/privacypolicy";
+import GeneralPolicy from "./components/generalpolicy/generalpolicy";
+import TstPages from "./pages/tstpages/tstpages";
+import ChatPage from "./pages/chatpage/chatpage";
 
 function App() {
+
+  const [isLogedIn, setLogedIn] = useState(true);
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LoginPage />,
+      element: isLogedIn ? <ChatPage /> : <LoginPage onClickLogin={setLogedIn}/>,
     },
+    {
+      path: "/policies",
+      element: <PolicyPage />,
+      children: [
+        {
+          path: "/policies/",
+          element: <Navigate to="/404" />, //tst
+        },
+        {
+          path: "/policies/terms-of-use/",
+          element: <TermsOfUse />,
+        },
+        {
+          path: "/policies/privacy-policy/",
+          element: <PrivacyPolicy />,
+        }
+      ]
+    },
+
   ]);
 
   return <RouterProvider router={router} />;

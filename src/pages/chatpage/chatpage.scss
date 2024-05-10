@@ -1,0 +1,49 @@
+.chatpagewrapper{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    .left{
+        display: flex;
+        flex: 2;
+        width: 100%;
+        height: 100%;
+    
+        background-color: red;
+    }
+    
+    .right{
+        display: flex;
+        flex: 7;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        .content-wrapper{
+            width: 100%;
+            height: 100%;
+            .header{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 50px;
+                padding: 10px;
+                button {
+                    display: flex;
+                    width: max-content;
+                    background-color: blueviolet;
+                    
+                }
+
+                .dropdownmenu-wrapper {
+                    position: absolute;
+                    left: inherit;
+                    display: flex;
+                    background-color: red;
+                    margin-top: 50px;
+                    z-index: 9999;
+                }
+            }
+        }
+
+    }
+}
+

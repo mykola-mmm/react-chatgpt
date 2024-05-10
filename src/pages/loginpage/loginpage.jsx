@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./loginpage.scss";
 import RunningMessage from "../../components/runningmessage/runningmessage";
 
-export default function LoginPage() {
+export default function LoginPage({onClickLogin}) {
 
   const loginPageMessages = [
     { title: "Lorem ipsum", msgbody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
@@ -16,7 +17,6 @@ export default function LoginPage() {
         <div className="wrapper">
           <div className="logo">
             <div>ChatGPT
-            {/* <span>●</span> */}
             <div className="circle"></div>
             </div>
           </div>
@@ -31,10 +31,10 @@ export default function LoginPage() {
               <h2>Get started</h2>
             </div>
             <div className="buttons">
-              <button className="btn">
+              <button className="btn" onClick={()=>onClickLogin(true)}>
                 <h3>Login</h3>
               </button>
-              <button className="btn">
+              <button className="btn" onClick={()=>onClickLogin(true)}>
                 <h3>Sign Up</h3>
               </button>
             </div>
@@ -45,9 +45,9 @@ export default function LoginPage() {
               <img src="./logo.png" alt="" />
             </div>
             <div className="links">
-              <a href="">Terms of use</a>
+              <Link to={`/policies/terms-of-use/`} target="_blank">Terms of use</Link>
               <span>|</span>
-              <a href="">Privacy policy</a>
+              <Link to={`/policies/privacy-policy/`} target="_blank">Privacy policy</Link>
             </div>
           </div>
         </div>
