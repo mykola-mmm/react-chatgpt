@@ -55,23 +55,37 @@
                 width: 100%;
                 flex-grow: 1;
                 // padding-right: 10px;
+                animation-fill-mode: forwards;
                 .message{
-                    // position: relative;
-                    // animation-fill-mode: forwards;
-                    animation:  my-animation-appear 0.1s ease-out forwards;
+                    display: flex;
+                    flex-direction: column;
+                    animation:  my-animation-appear 0.2s ease-out forwards;
+
+                    .title{
+                        font-size: 50px;
+                        font-weight: bold;
+                    }
+                    .message-body{
+                        display: flex;
+                        flex-direction: row;
+                        b{
+                            height: min-content;
+                            font-size: 42px;
+                            line-height: 1;
+                            box-sizing: border-box;
+                        }
+
+                        .text{
+                            display: flex;
+                            font-size: 20px;
+                            align-items: center;
+
+                        }
+                    }
                     
 
                     &.transition{ 
-                        animation:  my-animation-dissapear 0.1s ease-in;
-                    }
-                    .title{
-                        font-size: 50px;
-                        // padding-top: 50px;
-                    }
-                    .text{
-                        // display: flex;
-                        font-size: 20px;
-                        // width: 100%;
+                        animation:  my-animation-dissapear 0.2s ease-in forwards;
                     }
 
 
@@ -182,10 +196,8 @@
     background-color: #fe7600;
     border-radius: 50%;
     transition: all 0.3s ease;
+    
     &.inactive{
-        
-
-        // display: none;
-        background-color: #ffffdb;
+        opacity: 0;
     }
 }

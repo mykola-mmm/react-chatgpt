@@ -5,10 +5,9 @@ import RunningMessage from "../../components/runningmessage/runningmessage";
 export default function LoginPage() {
 
   const loginPageMessages = [
-    // { title: "Welcome", msgbody: "Ta!" },
-    { title: "Welcome", msgbody: "Thank you for visiting our website! Thank you for visiting our website! Thank you for visiting our website!" },
-    { title: "New Feature", msgbody: "Check out our latest feature! Check out our latest feature! Check out our latest feature!" },
-    { title: "Important Notice", msgbody: "Please read the following notice. Please read the following notice. Please read the following notice." }
+    { title: "Lorem ipsum", msgbody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+    { title: "Nulla facilisi", msgbody: "Nulla facilisi. Sed euismod, elit at aliquet ultricies." },
+    { title: "Vestibulum ante", msgbody: "Vestibulum ante ipsum primis in faucibus orci luctus." }
   ];
 
   return (
