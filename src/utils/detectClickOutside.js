@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function detectClickOutside(ref, onClickOutside, exceptionElementsRef = []) {
+export default function detectClickOutside(ref, exceptionElementsRef = [], onClickOutside) {
     useEffect(() => {
       /**
        * Invoke Function onClick outside of element
