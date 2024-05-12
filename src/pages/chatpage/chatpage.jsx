@@ -5,17 +5,28 @@ import "./chatpage.scss";
 import Dropdown from "../../components/dropdown/dropdown";
 import ShareIcon from '@mui/icons-material/Share';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 
 export default function ChatPage() {
 
-  
+
   return (
     <>
       <div className="chatpagewrapper">
         <div className="left">
           <div className="nav-bar-wrapper">
             <div className="header">
-              <div className="header-wrapper"></div>
+              <div className="header-wrapper">
+                <div className="button-wrapper">
+                  <button>
+                    <div className="new-chat">
+                      <img src="/logo.png" alt="" />
+                      {/* <span>New chat</span> */}
+                    </div>
+                    <EditNoteIcon />
+                  </button>
+                </div>
+              </div>
             </div>
             <div className="chat-list-wrapper">
               <div className="chat">chat</div>
