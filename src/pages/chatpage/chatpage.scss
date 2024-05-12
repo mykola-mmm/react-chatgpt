@@ -1,32 +1,42 @@
-.chatpagewrapper{
+.chatpagewrapper {
     display: flex;
     width: 100vw;
     height: 100vh;
-    .left{
+
+    .left {
         display: flex;
         flex: 2;
         width: 100%;
         height: 100%;
-    
+
         background-color: rgb(217, 217, 217);
     }
-    
-    .right{
+
+    .right {
         display: flex;
         flex: 8;
         width: 100%;
         height: 100%;
         background-color: rgb(255, 231, 231);
-        .content-wrapper{
-            width: 100%;
-            height: 100%;
-            .header{
+
+        .content-wrapper {
+            // width: 100%;
+            // height: 100%;
+            // display: flex;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+
+            .header {
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 width: 100%;
-                height: 100px;
+                min-height: 50px;
                 padding: 10px;
+
                 button {
                     display: flex;
                     width: max-content;
@@ -34,11 +44,27 @@
                     padding: 10px 30px;
                     border-radius: 5px;
                     justify-content: space-between;
-                    gap: 50px;
-                    &:hover{
+                    gap: 20px;
+
+                    &:hover {
                         background-color: rgb(244, 202, 202);
                     }
-                    
+                }
+
+                .share-icon {
+                    padding: 10px;
+                    margin-right: 25px;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(244, 202, 202);
+                        border-radius: 5px;
+                    }
+                    svg {
+                        display: flex;
+                        // object-fit: contain;
+                        // padding: 10px;
+                        margin: 5px;
+                    }
                 }
 
                 .dropdownmenu-wrapper {
@@ -50,44 +76,127 @@
                     background-color: white;
                     min-width: 300px;
                     max-width: 50%;
-                    
+
                     z-index: 9999;
                     padding: 10px 20px;
                     border-radius: 5px;
-                    .dropdownmenu-header{
+
+                    .dropdownmenu-header {
                         display: flex;
                         justify-content: space-between;
-                        width: 90%;
-
+                        width: 100%;
+                        opacity: 0.5;
                     }
+
                     .model-list {
                         display: flex;
                         flex-direction: column;
-                        padding: 0px 20px;
+                        padding: 10px 20px;
                         margin: 0px -20px;
                         border-bottom: 1px solid black;
+
                         .model-wrapper {
-                            img{
+                            display: flex;
+                            align-items: center;
+
+                            &:hover {
+                                background-color: rgb(135, 119, 119);
+                                border-radius: 5px;
+                            }
+
+                            img {
                                 width: 20px;
                                 height: 20px;
+                                // padding: 0px 10px;
+                                margin: 0px 10px;
+                            }
+
+                            .model-info {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 5px 10px;
+
+                                span {
+                                    opacity: 0.7;
+                                }
                             }
                         }
                     }
-                    .dropdownmenu-footer{
+
+                    .dropdownmenu-footer {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        padding: 5px 10px 5px;
+                        // padding: 5px 10px 5px;
+                        padding-left: 5px;
                         margin-top: 5px;
                         border-radius: 5px;
-                        &:hover{
+                        width: 100%;
+
+                        &:hover {
                             background-color: rgb(135, 119, 119);
+                        }
+
+                        input {
+                            width: min-content;
                         }
                     }
                 }
             }
-        }
 
+            .chat-wrapper{
+                display: flex;
+                flex-direction: column;
+                // height: 100%;
+                flex-grow: 1;
+                position: relative;
+                // overflow-y: auto;
+
+                .chat{
+                    display: flex;
+                }
+
+                .input-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: absolute; /* Add this line */
+                    bottom: 0px; /* Add this line */
+                    padding: 10px 30px;
+                    width: 100%; /* Adjust width as needed */
+                    .input-relative-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        width: 80%;
+                        position: relative;
+                        
+                        input {
+
+                            width: 100%;
+                            padding: 10px 30px;
+                            border-radius: 5px;
+
+                        }
+                        .button-wrapper{
+                            display: flex;
+                            padding: 5px;
+                            position: absolute;
+                            top: 5px;
+                            right: 10px;
+                            border-radius: 5px;
+                            svg{
+
+                            }
+                            &:hover{
+                                background-color: rgb(244, 202, 202);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
     }
 }
-

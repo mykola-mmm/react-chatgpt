@@ -3,21 +3,22 @@ import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import { useState, useRef, useEffect, useCallback } from "react";
 import detectClickOutside from "../../utils/detectClickOutside";
 import Switch from "@mui/material/Switch";
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const modelList = [
   {
-      "logo_path": "/chatgpt3.5.png",
-      "name": "ChatGPT-3.5",
-      "description": "ChatGPT-3.5 is a state-of-the-art language model developed by OpenAI, capable of understanding and generating human-like text based on the input it receives. It builds upon the success of previous iterations and incorporates advancements in natural language processing and machine learning techniques."
+    logo_path: "/chatgpt3.5.png",
+    name: "ChatGPT-3.5",
+    description:
+      "Great for everyday tasks",
   },
   {
-      "logo_path": "/chatgpt3.5.png",
-      "name": "ChatGPT-4",
-      "description": "ChatGPT-4 represents the next evolution in conversational AI technology. Building upon the foundations of its predecessors, ChatGPT-4 boasts even greater capabilities in understanding context, generating coherent responses, and exhibiting more nuanced language understanding. It sets a new standard for human-like interactions in AI-driven conversations."
-  }
-]
-
+    logo_path: "/chatgpt3.5.png",
+    name: "ChatGPT-4",
+    description:
+      "Our smartest model yet...",
+  },
+];
 
 export default function DropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -46,7 +47,6 @@ export default function DropDown() {
 }
 
 function DropDownMenu({ onClickOutsideHandler, exceptionElementsRef = [] }) {
-
   const [switchOn, setSwitchOn] = useState(false);
 
   const wrapperRef = useRef("menu");
@@ -62,17 +62,16 @@ function DropDownMenu({ onClickOutsideHandler, exceptionElementsRef = [] }) {
           <InfoOutlinedIcon />
         </div>
         <div className="model-list">
-          {
-            modelList.length > 0
+          {modelList.length > 0
             ? modelList.map((model, index) => {
-              return (
-                DropDownMenuItem({...model, index})
-              )
-            })
-            : null
-          }
+                return DropDownMenuItem({ ...model, index });
+              })
+            : null}
         </div>
-          <div className="dropdownmenu-footer" onClick={()=>setSwitchOn(!switchOn)}>
+        <div
+          className="dropdownmenu-footer"
+          onClick={() => setSwitchOn(!switchOn)}
+        >
           <div className="extra-options">
             <img src="" alt="" />
             <span>Model</span>
@@ -85,13 +84,14 @@ function DropDownMenu({ onClickOutsideHandler, exceptionElementsRef = [] }) {
   );
 }
 
-function DropDownMenuItem({logo_path, name, description, index}) {
+function DropDownMenuItem({ logo_path, name, description, index }) {
   return (
-      <div className="model-wrapper" key={index}>
-        <img src={logo_path} alt="" />
-        <div className="model-info"></div>
+    <div className="model-wrapper" key={index}>
+      <img src={logo_path} alt="" />
+      <div className="model-info">
         <h2>{name}</h2>
         <span>{description}</span>
       </div>
+    </div>
   );
 }
