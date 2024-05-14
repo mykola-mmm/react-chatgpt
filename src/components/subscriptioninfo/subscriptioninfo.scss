@@ -1,0 +1,29 @@
+.subscriptioninfo-wrapper{
+    display: flex;
+    .subscriptioninfo{
+        // background-color: black;
+        display: flex;
+        flex: 1;
+        margin: 5px ;
+        padding: 10px;
+        gap: 20px;
+
+        &:hover{
+            background-color: aqua;
+            border-radius: 5px;
+        }
+        .icon-wrapper{
+            display: flex;
+            border: 1px solid gray;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

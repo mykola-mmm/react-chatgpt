@@ -1,0 +1,25 @@
+.fullscreenpopup-wrapper{
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 255, 0.2);
+    z-index: 999;
+    .popup-wrapper{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        height: 70%;
+        margin: auto; /* Add this line to center the element */
+        opacity: 100%;
+        background-color: blue;
+        z-index: -100;
+        .message-wrapper{
+            opacity: 1;
+        }
+    }
+}

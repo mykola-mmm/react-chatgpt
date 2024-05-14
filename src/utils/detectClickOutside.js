@@ -8,6 +8,7 @@ export default function detectClickOutside(ref, exceptionElementsRef = [], onCli
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target) && !exceptionElementsRef.some((element => element.current.contains(event.target)))) {
           onClickOutside();
+          console.log('ref', ref.current, 'ref.current.contains(event.target)', ref.current.contains(event.target));
         }
       }
       // Bind

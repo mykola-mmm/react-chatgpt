@@ -7,6 +7,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import UserMenu from "../../components/usermenu/usermenu";
+import SubscriptionInfo from "../../components/subscriptioninfo/subscriptioninfo";
 
 export default function ChatPage() {
   return (
@@ -31,6 +32,7 @@ export default function ChatPage() {
             </div>
             <div className="footer">
               <div className="footer-wrapper">
+                <SubscriptionInfo />
                 <UserMenu />
               </div>
             </div>
