@@ -1,6 +1,6 @@
 import React from "react";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import detectClickOutside from "../../utils/detectClickOutside";
 import Switch from "@mui/material/Switch";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -47,12 +47,29 @@ export default function DropDown() {
 }
 
 function DropDownMenu({ onClickOutsideHandler, exceptionElementsRef = [] }) {
-  const [switchOn, setSwitchOn] = useState(false);
+  // const [switchOn, setSwitchOn] = useState(false);
+
+  const [switchOn, setSwitchOn] = useState(() => {
+    const storedValue = localStorage.getItem('switchOn');
+    return storedValue ? JSON.parse(storedValue) : false;
+  })
+
+  useEffect(() => {
+    localStorage.setItem('switchOn', JSON.stringify(switchOn));
+  }, [switchOn]);
 
   const wrapperRef = useRef("menu");
   detectClickOutside(wrapperRef, exceptionElementsRef, () => {
     onClickOutsideHandler(false);
   });
+
+
+
+  // const memoizedswitchOn = useMemo(() => {
+  //   // Expensive computation or transformation
+  //   console.log('Memoizing count');
+  //   return switchOn; // Just a simple example, replace with your actual computation
+  // }, [switchOn]);
 
   return (
     <>
