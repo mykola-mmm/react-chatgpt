@@ -1,6 +1,6 @@
 import React from 'react'
 import "./fullscreenpopup.scss";
-import detectClickOutside from '../../utils/detectClickOutside';
+import test from '../../utils/test';
 import { useRef } from 'react';
 
 export default function FullScreenPopUp({onClickOutsideHandler}) {
@@ -9,7 +9,7 @@ export default function FullScreenPopUp({onClickOutsideHandler}) {
   const exceptionRef = useRef("sdsdsdsd");
   let exceptionElementsRef = [exceptionRef];
 
-  detectClickOutside(wrapperRef, exceptionElementsRef, () => {
+  test(wrapperRef, () => {
     onClickOutsideHandler(false);
   });
 

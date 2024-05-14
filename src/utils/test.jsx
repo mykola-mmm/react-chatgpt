@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 
-export default function detectClickOutside(ref, exceptionElementsRef = [], onClickOutside) {
+export default function test(ref, onClickOutside) {
   useEffect(() => {
     /**
      * Invoke Function onClick outside of element
      */
     function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target) && !exceptionElementsRef.some((element => element.current.contains(event.target)))) {
+      if (ref.current && !ref.current.contains(event.target)) {
         onClickOutside();
       }
     }
@@ -16,5 +16,5 @@ export default function detectClickOutside(ref, exceptionElementsRef = [], onCli
       // dispose
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, onClickOutside, exceptionElementsRef]);
+  }, [ref, onClickOutside]);
 }

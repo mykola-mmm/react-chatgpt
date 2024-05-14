@@ -3,7 +3,6 @@ import "./subscriptioninfo.scss";
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import {useState, useRef } from 'react';
 import FullScreenPopUp from '../fullscreenpopup/fullscreenpopup';
-import detectClickOutside from '../../utils/detectClickOutside';
 
 export default function SubscriptionInfo() {
 

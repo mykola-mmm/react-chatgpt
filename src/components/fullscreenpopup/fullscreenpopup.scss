@@ -17,7 +17,7 @@
         margin: auto; /* Add this line to center the element */
         opacity: 100%;
         background-color: blue;
-        z-index: -100;
+        z-index: 1000;
         .message-wrapper{
             opacity: 1;
         }
