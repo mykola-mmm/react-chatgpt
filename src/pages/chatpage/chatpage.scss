@@ -10,6 +10,8 @@
         height: 100%;
         background-color: rgb(217, 217, 217);
         .nav-bar-wrapper{
+            display: flex;
+            flex-direction: column;
             width: 100%;
             .header{
 
@@ -43,7 +45,22 @@
                     }
                 }
             }
+            .chat-list-wrapper{
+                flex: 1;
+                // height: auto;
+                margin: auto 0px;
+            }
+            .footer{
+                height: 100px;
+                background-color: pink;
+                position: sticky;
+                bottom: 0;
+                .footer-wrapper{
+                    color: red;
+                }
+            }
         }
+
     }
 
     .right {

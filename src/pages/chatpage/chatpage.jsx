@@ -6,6 +6,7 @@ import Dropdown from "../../components/dropdown/dropdown";
 import ShareIcon from "@mui/icons-material/Share";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import UserMenu from "../../components/usermenu/usermenu";
 
 export default function ChatPage() {
   return (
@@ -19,7 +20,6 @@ export default function ChatPage() {
                   <button>
                     <div className="new-chat">
                       <img src="/logo.png" alt="" />
-                      {/* <span>New chat</span> */}
                     </div>
                     <EditNoteIcon />
                   </button>
@@ -30,7 +30,9 @@ export default function ChatPage() {
               <div className="chat">chat</div>
             </div>
             <div className="footer">
-              <div className="footer-wrapper"></div>
+              <div className="footer-wrapper">
+                <UserMenu />
+              </div>
             </div>
           </div>
         </div>
