@@ -65,7 +65,7 @@
 
     .right {
         display: flex;
-        flex: 8;
+        flex: 7;
         width: 100%;
         height: 100%;
         background-color: rgb(255, 231, 231);
@@ -214,6 +214,8 @@
                     justify-content: center;
                     position: absolute; /* Add this line */
                     bottom: 0px; /* Add this line */
+                    left: 200px;
+                    right: 0px;
                     padding: 10px 30px;
                     // width: 20%; /* Adjust width as needed */
                     flex: 1;

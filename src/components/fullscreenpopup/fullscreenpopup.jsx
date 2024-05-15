@@ -17,7 +17,15 @@ export default function FullScreenPopUp({onClickOutsideHandler}) {
     <div className='fullscreenpopup-wrapper' >
         <div className="popup-wrapper" ref={exceptionRef}>
             <div className="message-wrapper" ref={wrapperRef} >
-            message
+              <div className="popup-header">
+
+              </div>
+              <div className="popup-body">
+                
+              </div>
+              <div className="popup-footer">
+
+              </div>
             </div>
             
         </div>
