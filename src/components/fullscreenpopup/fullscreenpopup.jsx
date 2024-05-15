@@ -9,7 +9,7 @@ export default function FullScreenPopUp({onClickOutsideHandler}) {
   const exceptionRef = useRef("sdsdsdsd");
   let exceptionElementsRef = [exceptionRef];
 
-  test(wrapperRef, () => {
+  test(exceptionRef, () => {
     onClickOutsideHandler(false);
   });
 
